@@ -1,0 +1,32 @@
+<ul class="nav justify-content-end nav_bar">
+  <li class="nav-item">
+    <a class="nav-link" href="/profile">Вернуться в профиль</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/logout">Выйти</a>
+  </li>
+  
+</ul>
+<section>
+
+<div id="inner">
+  <h1 class="text-center mb-3">Загрузите Вашу картинку</h1>
+  <div class="form-inner mx-auto" style="width: 600px;" >
+    <form method="POST" class="upload-form mt-5" name="uploadImageForm" action="/upload" enctype="multipart/form-data">
+      <div class="multer text-center">
+        <div class="multer-upload">
+          <label class="label-multer"></label>
+          <input id="buttonFile" type="file" name="profile-file" required />
+        </div>
+      </div>
+      <input required name="title" class="input_form text-center mx-auto" type="text"  placeholder="Название" style="width: 300px;"/>
+
+      <textarea required name="description" class="input_form text-center mx-auto" style="width: 300px;" id="desc" cols="19" placeholder="Описание"rows="5"></textarea>
+
+      <div class="multer-submit">
+          <input class="btn-multer add-button mx-auto" type="submit" style="width: 300px;" value="Загрузить" />
+      </div>
+    </form>
+  </div>
+</div>
+</section>

@@ -1,0 +1,20 @@
+<div class="reg">
+  <h1 class='login'>Логин</h1>
+  {{#if isGrandson}}
+  <form class="login_form register_form" id="login_form" method="POST" action="/grandson/login" autocomplete="off">  
+  {{/if}}
+  {{#if isGrandmother}}
+  <form class="login_form register_form" id="login_form" method="POST" action="/grandmother/login" autocomplete="off">
+  {{/if}}
+    <input class="input" type="email" id="useremail" name="email" placeholder="email" />
+    <input class="input" type="password" id="userpass" name="password" placeholder="password" />
+    <button class="input" type="submit">Войти</button>
+  </form>
+  {{#if isGrandson}}
+    <div class="text-center"><a style="font-size: 36px; color:red;" href='/grandson/registration'>Перейти на регистрацию в приложение</a></div>
+  {{/if}}
+  {{#if isGrandmother}}
+    <div class="text-center"><a href='/grandmother/registration' style="font-size: 36px; color:red;">Перейти на регистрацию в приложение</a></div>
+  {{/if}}
+</div>
+

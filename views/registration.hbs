@@ -1,0 +1,24 @@
+<div class="reg">
+  <h1 style="font-size: 36px; color:red;">Регистрация</h1>
+  {{#if isGrandson}}
+  <form class="register_form" id="register_form" method="POST" action="/grandson/registration" autocomplete="off">  
+  {{/if}}
+  {{#if isGrandmother}}
+  <form class="register_form" id="register_form" method="POST" action="/grandmother/registration" autocomplete="off">
+  {{/if}}
+    <input class="input" type="test" id="username" name="username" placeholder="имя" />
+    <input class="input" type="email" id="email" name="email" placeholder="почтовый ящик" />
+    <input class="input" type="password" id="userpass" name="password" placeholder="ведите пароль" />
+    <input class="input" type="password" id="confirm-password" name="confirmPassword" placeholder="подтвердите пароль" />
+    {{#if isGrandson}}
+    <input class="input" type="email" id="useremail" name="grandmotherEmail" placeholder="почтовый ящик вашей бабушки" />
+    {{/if}}
+    <button class="input" type="submit">Зарегистрироваться</button>
+  </form>
+  {{#if isGrandson}}
+    <div class="text-center mb-5"><a style="font-size: 36px; color:red;" href='/grandson/login'>Перейти на вход в приложение</a></div>
+  {{/if}}
+  {{#if isGrandmother}}
+    <div class="text-center mb-5"><a style="font-size: 36px; color:red;" class='enter_reg_link' href='/grandmother/login'>Перейти на вход в приложение</a></div>
+  {{/if}}
+</div>

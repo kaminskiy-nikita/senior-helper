@@ -1,0 +1,56 @@
+<ul class="nav d-flex justify-content-between">
+  <li class="nav-item">
+    <a class="nav-link" href="/profile">Привет, {{username}}!</a>
+  </li>
+  <li class="nav-item">
+    {{#if isGrandmotherSession}}
+    <a class="nav-link" href="/upload">Загрузить картинку</a>
+    {{/if}}
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/logout">Выйти</a>
+  </li>
+</ul>
+<section class="d-flex">
+
+{{#each images}}
+<div class="card p-1" style="width: 18rem;">
+  
+  <img class="card-img-top img-thumbnail"  height="200px" src={{this.path}} alt={{this.title}}>
+ 
+  <div class="card-body">
+    <h5 class="card-title">{{this.title}}</h5>
+    <p class="card-text">{{this.describe}}</p>
+  </div>
+  
+  <div class="card-body">
+
+    <button class='card-button' type="button"><a href='#' class="delete-img" data-image-id={{this.id}} data-image-path={{this.path}}>Удалить</a></button>
+
+    <button class='card-button' type="button"><a href="#" class="card-link recognize" data-image-path={{this.path}}>Прослушать текст</a></button>
+
+  </div>
+</div>
+{{/each}}
+
+</section>
+
+<div class="loader">
+<div class="lds-heart"><div></div></div>
+</div>
+
+
+    <div class="modal fade" id="image-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Просмотр изображения</h5>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid d-block mx-auto" src="" alt="">
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
